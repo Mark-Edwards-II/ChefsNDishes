@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using System.Collections.Generic
+@using ChefsNDishes.Models
+@model List<Chef>
+<div class="text-center">
+    <a>Chefs</a> |
+    <a asp-action="Dishes">Dishes</a>
+</div>
+<div>
+    <a asp-action="AddChef">Add a Chef</a>
+</div>
+<div class="row text-center">
+    <p>Check out our roster of Chefs</p>
+    <hr>
+    <table class="table border border-dark" >
+        <thead class="thead-dark" >
+            <tr>
+                <th>Name:</th>
+                <th>Age:</th>
+                <th># of Dishes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Chef c in Model)
+            {
+                <tr>
+                    <td>@c.FName @c.LName </td>
+                    <td></td>
+                    <td>@c.ChefsDishes.Count </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

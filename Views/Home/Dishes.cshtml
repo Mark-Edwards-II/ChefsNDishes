@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Dishes";
+}
+
+<div class="text-center">
+    <a asp-action="Index">Chefs</a>
+    <a>Dishes</a>
+</div>
+<div>
+    <a asp-action="AddDish">Add a Dish</a>
+</div>
+<div class="row text-center">
+    <p>Yum, take a look at our tasty dishes!</p>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Name:</th>
+                <th>Chef:</th>
+                <th>Tastiness:</th>
+                <th>Calories:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name Data</td>
+                <td>Chef Data</td>
+                <td>Tastiness</td>
+                <td>Calories</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

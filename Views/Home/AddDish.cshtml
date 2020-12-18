@@ -1,0 +1,52 @@
+
+
+@model Dish
+<div id="container">
+    <div class="row">
+        <h2>Add a Dish!</h2>
+    </div>
+    <div class="link col-md-1">
+        <p><a href="/">Home</a></p>
+    </div>
+    <div id="row">
+        <div id="form" class="mx-auto">
+            <form asp-action="CreateDish" method="post">
+                <div class="form-group">
+                    <label asp-for="DishName"></label>
+                    <input type="text" asp-for="DishName" class="form-control">
+                    <span style="color:Red;" asp-validation-for="DishName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Calories"></label>
+                    <input type="text" asp-for="Calories" class="form-control">
+                    <span style="color:Red;" asp-validation-for="Calories"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tastiness"></label> 
+                    <input asp-for="Tastiness">
+                    <span class="text-danger" asp-validation-for="Tastiness"></span>
+                </div>
+
+
+                <div>
+                    <label asp-for="ChefId"></label>
+                    <select asp-for="ChefId" >
+                        @foreach (var item in ViewBag.Chefs){
+                            <option value="@item.ChefId" > @item.FName </option>
+                        }
+                    </select>
+                </div>
+
+
+                
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <textarea asp-for="Description" class="form-control" cols="25" rows="1"></textarea>
+                    <span style="color:Red;" asp-validation-for="Description"></span>
+                </div>
+                <br>
+                    <button type="submit">Create Dish</button>
+            </form>
+        </div>
+    </div>
+</div>
